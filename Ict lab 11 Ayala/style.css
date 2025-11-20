@@ -1,0 +1,129 @@
+/* 1. 全局样式和重置 */
+* {
+    /* 确保所有元素的边框和内边距不影响总宽度计算 */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* 粉橘系背景：柔和的浅色调 */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff0f5; /* 浅粉色/米白色 */
+    color: #333;
+}
+
+/* 2. 头部和导航 */
+header {
+    /* 橘色系主色调 */
+    background: #ff7f50; /* Coral/橘红色 */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    /* 导航栏背景：稍深的橘色 */
+    background: #ff9966;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline; /* CSS Display property */
+    padding: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    /* 鼠标悬停和选中状态：亮黄色或浅橘色 */
+    color: #ffe0b2;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* 3. 主要内容区 - 统一风格 */
+main {
+    width: 85%; 
+    max-width: 1200px;
+    margin: 30px auto; 
+    padding: 0;
+    /* 强制 main 至少有一个高度，避免内容坍塌 */
+    min-height: 500px;
+}
+
+/* 卡片式风格 - 关键 */
+.card {
+    background: #ffffff; /* 卡片背景：白色 */
+    border: 1px solid #ffccbc; /* 浅橘色边框 */
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px; /* 圆角卡片 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+    z-index: 10; /* 确保卡片层级最高，不会被背景遮挡 */
+    position: relative; /* 配合 z-index */
+}
+
+/* 卡片中的标题颜色 */
+.card h2 {
+    color: #ff7f50; /* 使用橘色主色调 */
+    margin-bottom: 15px;
+}
+
+/* 4. 关键修复：清除浮动（clearfix） */
+/* 修复 about.html 内容消失，确保父元素包裹住浮动的子元素 */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both; /* CSS Clear property */
+}
+
+/* 5. 关键修复：头像浮动 */
+/* 使得 about.html 中的 figure（包含头像）浮动在左侧，文本环绕 */
+.card figure {
+    float: left; /* CSS Float property */
+    margin: 0 25px 15px 0; /* 右边和底部留出空间 */
+    padding: 0;
+}
+
+.card figure img {
+    border: 3px solid #ff9966; /* 给头像添加橘色边框 */
+}
+
+/* 6. 视频容器样式（保持响应式） */
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; 
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 7. 底部样式 */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #ff7f50; /* 使用橘色主色调 */
+    color: #fff;
+    clear: both; /* 确保 footer 在所有浮动元素下方 */
+    margin-top: 20px;
+}
